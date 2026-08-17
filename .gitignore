@@ -1,0 +1,66 @@
+# ===== 集成开发环境 (IDE) =====
+.idea/
+*.iml
+.vscode/
+
+# ===== 操作系统 =====
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ===== 编辑器 =====
+*.swp
+*.swo
+.settings/
+.classpath
+.project
+
+# ===== 日志 =====
+*.log
+
+# ===== 环境 / 依赖 =====
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.local
+.env.*.local
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ===== 构建产物 =====
+build/
+dist/
+out/
+target/
+
+# ===== 本地工具 / 索引 =====
+# codegraph 索引数据库 + 运行时产物（daemon.pid / daemon.log / *.db），本地生成，不应提交
+.codegraph/
+
+# Claude Code 本地工作区（个人 skills / 配置，不进仓库）
+.claude/
+
+# ===== 测试与覆盖率 =====
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage/
+htmlcov/
+.tox/
+.nox/
