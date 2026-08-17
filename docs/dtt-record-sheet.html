@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>DTT 个训训练记录表 · 结构图解</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f0f4f8; padding: 24px; color: #1a2b3c; }
+  .sheet { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.12); padding: 28px 32px; }
+  h1 { font-size: 22px; text-align: center; margin-bottom: 4px; }
+  .sub { text-align: center; color: #6b7c8f; font-size: 13px; margin-bottom: 20px; }
+  h2 { font-size: 15px; background: #2c6e9b; color: #fff; padding: 6px 12px; border-radius: 6px; margin: 22px 0 10px; display: flex; align-items: center; gap: 8px; }
+  h2 .num { background: #fff; color: #2c6e9b; border-radius: 50%; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; flex: none; }
+  h2 .hint { font-weight: normal; font-size: 12px; opacity: .85; margin-left: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { border: 1px solid #c9d6e2; padding: 6px 8px; text-align: center; }
+  th { background: #e8f0f7; font-weight: 600; }
+  .kv td:first-child { background: #f5f8fb; width: 110px; font-weight: 600; }
+  .filled { color: #333; }
+  .ok { color: #1a8f3c; font-weight: 700; }
+  .bad { color: #d64545; font-weight: 700; }
+  .nr  { color: #b8860b; font-weight: 700; }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; }
+  .tag.ind { background: #e2f5e8; color: #1a8f3c; }
+  .tag.gest { background: #fff3d6; color: #9a6b00; }
+  .tag.pp  { background: #fde8e8; color: #c0392b; }
+  .tag.fp  { background: #f0e0f5; color: #7d3c98; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; margin-top: 8px; color: #4a5b6c; }
+  .legend span { background: #f5f8fb; border-radius: 6px; padding: 3px 10px; }
+  .stat { display: flex; gap: 16px; margin-top: 10px; }
+  .stat .card { flex: 1; background: #f5f8fb; border: 1px solid #c9d6e2; border-radius: 8px; padding: 10px; text-align: center; }
+  .stat .card .v { font-size: 24px; font-weight: 700; color: #2c6e9b; }
+  .stat .card .l { font-size: 12px; color: #6b7c8f; margin-top: 2px; }
+  .master { margin-top: 10px; background: #e2f5e8; border: 1px solid #9fd8b4; color: #14602d; border-radius: 8px; padding: 8px 12px; font-size: 13px; }
+  .abc th { width: 33%; }
+  .note { font-size: 13px; line-height: 1.7; background: #fffdf3; border-left: 4px solid #e0b94f; padding: 8px 12px; border-radius: 0 6px 6px 0; }
+  .arrow { text-align: center; color: #2c6e9b; font-size: 20px; margin: 14px 0 2px; }
+  .flow { font-size: 12px; color: #6b7c8f; text-align: center; margin-bottom: 6px; }
+  .field-tag { font-size: 11px; color: #999; margin-left: 6px; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <h1>📋 DTT 个训训练记录表（数据表）</h1>
+  <div class="sub">《早期密集训练实战图解》ABA 初级教程配套 · 一节个训一张表 · 下面按 6 个区块拆解，内容为示例填写</div>
+
+  <h2><span class="num">1</span> 表头 — 这次训练的基本信息 <span class="hint">一条记录</span></h2>
+  <table class="kv">
+    <tr><td>孩子</td><td class="filled">小 A（4 岁 2 个月）</td><td>治疗师</td><td class="filled">妈妈 / 王老师</td></tr>
+    <tr><td>日期时段</td><td class="filled">2026-08-17 上午 9:00-9:05</td><td>地点</td><td class="filled">家中 · 小桌板（无干扰）</td></tr>
+  </table>
+
+  <h2><span class="num">2</span> 课题定义 — 今天练什么、怎么算会 <span class="hint">操作化定义，换人也能照做</span></h2>
+  <table class="kv">
+    <tr><td>课题名称</td><td class="filled" colspan="3">实物配对（完全相同 · 3 选 1）&nbsp;<span class="tag ind">习得阶段</span></td></tr>
+    <tr><td>指令 SD</td><td class="filled" colspan="3">「放一样的」（固定说法，不换措辞）</td></tr>
+    <tr><td>教具</td><td class="filled" colspan="3">积木 / 小汽车 / 勺子（每 10 次一轮换位置防位置记忆）</td></tr>
+  </table>
+
+  <h2><span class="num">3</span> 尝试记录 — 表格主体，一回合一格 <span class="hint">记两件事：辅助给了多少 + 反应对不对</span></h2>
+  <table>
+    <tr>
+      <th>尝试 #</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+    </tr>
+    <tr>
+      <td>辅助层级</td>
+      <td><span class="tag fp">全躯体</span></td><td><span class="tag fp">全躯体</span></td><td><span class="tag pp">部分躯体</span></td>
+      <td><span class="tag pp">部分躯体</span></td><td><span class="tag pp">部分躯体</span></td><td><span class="tag gest">手势</span></td>
+      <td><span class="tag gest">手势</span></td><td><span class="tag gest">手势</span></td><td><span class="tag ind">独立</span></td><td><span class="tag gest">手势</span></td>
+    </tr>
+    <tr>
+      <td>反应结果</td>
+      <td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td>
+      <td class="ok">✓</td><td class="bad">✗</td><td class="ok">✓</td><td class="ok">✓</td><td class="nr">N/R</td>
+    </tr>
+  </table>
+  <div class="legend">
+    <span>✓ 正确反应</span><span>✗ 错误反应（→ 纠错程序：示范后重发指令）</span><span>N/R 无反应（5 秒内）</span>
+    <span>辅助：独立 → 手势 → 部分躯体 → 全躯体</span>
+  </div>
+
+  <h2><span class="num">4</span> 数据汇总 — 用数字说话 <span class="hint">独立率是核心指标</span></h2>
+  <div class="stat">
+    <div class="card"><div class="v">90%</div><div class="l">正确率（9/10）</div></div>
+    <div class="card"><div class="v">10%</div><div class="l">独立完成率（1/10）</div></div>
+    <div class="card"><div class="v">1 组</div><div class="l">本节尝试组数（10 次/组）</div></div>
+  </div>
+  <div class="master">🎯 掌握标准：连续 2 节课独立完成率 ≥ 80% → 该课题转入<b>维持/泛化</b>，引入新课题。<b>本节未达标</b>（才 10%），下节继续在「手势辅助」层级巩固。</div>
+
+  <h2><span class="num">5</span> 强化物 & 行为观察 <span class="hint">为什么练得顺 / 不顺</span></h2>
+  <table>
+    <tr><th style="width:50%">强化物记录</th><th>问题行为（如有）</th></tr>
+    <tr>
+      <td style="text-align:left">吹泡泡 🫧（效果好，每次 10 秒）<br>软糖（第 6 次后出现饱和，弃用）</td>
+      <td style="text-align:left">第 10 次尝试前推了一下教具 → 见下方 ABC</td>
+    </tr>
+  </table>
+  <table class="abc" style="margin-top:8px">
+    <tr class="abc"><th>A 前因</th><th>B 行为</th><th>C 后果</th></tr>
+    <tr><td>连续 3 次尝试后未给强化物</td><td>推倒桌上的教具</td><td>治疗师平静复位，要求捡起后继续</td></tr>
+  </table>
+
+  <h2><span class="num">6</span> 备注 & 下节计划 <span class="hint">给下一次训练的人看</span></h2>
+  <div class="note">
+    小 A 在「手势→独立」过渡时容易走神（眼神飘向泡泡瓶）。<b>下节计划：</b>① 手势辅助保持，正确后立即强化，缩短延迟；② 把泡泡瓶移出视线；③ 插入 2 个已精熟课题（模仿拍手）维持配合动机；④ 若独立率达 50%，开始撤至「手势延迟 3 秒」。
+  </div>
+
+  <div class="arrow">⬇</div>
+  <div class="flow">多张表按日期堆叠 → 形成课题的<b>学习曲线</b>（独立率随时间上升）→ 支撑「升课题 / 撤辅助 / 换教具」三类决策 —— 这就是记录表存在的意义</div>
+</div>
+</body>
+</html>
